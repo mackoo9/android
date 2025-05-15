@@ -39,9 +39,7 @@ public class MainActivity extends ComponentActivity {
         // ViewModel 초기화
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-        // ViewModel 의 LiveData 관찰
         viewModel.getSpeechText().observe(this, result -> {
-            // 음성 인식 결과가 들어오면 TextView 에 표시
             textResult.setText(result);
         });
 
