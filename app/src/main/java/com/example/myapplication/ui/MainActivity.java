@@ -27,6 +27,21 @@ public class MainActivity extends ComponentActivity {
     private MainViewModel viewModel;
     private final Handler handler = new Handler();
 
+    /*
+        전체적인 flow
+        1. onCreate로 화면및 리스너 와 LiveData 초기화화
+        2. 리스너에 따른 메소드 호출
+        3. viewModel에서 음성인식 시작하는 SpeechRepository 호출
+        4. 음성 인식 결과를 LiveData에 저장
+        5. MainActivity에서 LiveData에 저장된 음성 인식 결과를 텍스트뷰에 표시
+        6. 5초 후 음성 인식 중지 및 버튼 복원
+        7. 중지될떄 viewModel에서 음성인식 중지 메소드 호출
+        8. SpeechRepository에서 음성인식 중지 메소드 호출
+        9. 중지될떄 음성인식 결과를 LiveData에 저장
+        10. MainActivity에서 LiveData에 저장된 음성 인식 결과를 텍스트뷰에 표시
+    */  
+
+    // 시작할때 여기로 제일 처음 들어옴옴
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
