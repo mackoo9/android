@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:gravity="center">
 
     <Button
-        android:id="@+id/btnRecord"
+        android:id="@+id/btnSpeech"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="음성 입력 시작" />
+        android:text="음성 인식 시작"
+        android:layout_marginBottom="16dp" />
 
-    <TextView
-        android:id="@+id/textResult"
+    <Button
+        android:id="@+id/btnTextRecognition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="24dp"
-        android:textSize="18sp" />
+        android:text="카메라로 텍스트 인식" />
+
 </LinearLayout>
